@@ -16,7 +16,7 @@ o_h, o_w, o_ch = overlay.shape
 
 ```
 
-## Scale bacground image
+## Scale background image
 ```
     W = 800
     imgScale = W/b_w
