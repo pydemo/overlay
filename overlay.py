@@ -1,8 +1,10 @@
 import os
 import cv2
 import numpy as np
-bg = r'images\Gergiev_art_helps_putin_to_kill.JPG'
-ov = r'images\gergiev_is_war_supporter.JPG'
+bg = r'in\Gergiev_art_helps_putin_to_kill.JPG'
+ov = r'in\gergiev_is_war_supporter.JPG'
+out = r'in\gergiev_is_war_supporter.JPG'
+
 assert os.path.isfile(bg)
 assert os.path.isfile(ov)
 background = cv2.imread(bg)
@@ -21,6 +23,8 @@ if 1:
     new_background = cv2.resize(background,(new_b_w, new_b_h))
     #cv2.imshow("Show by CV2",new_background)
     #cv2.waitKey(0)
+    cv2.imwrite("resizeimg_new_background.jpg",new_background)
+     
 
 if 1:
     W = 350
@@ -31,6 +35,7 @@ if 1:
     new_overlay = cv2.resize(overlay,(new_o_w, new_o_h))
     #cv2.imshow("Show by CV2",new_overlay)
     #cv2.waitKey(0)
+    cv2.imwrite("resizeimg_new_overlay.jpg",new_overlay)
     
     
 if 1:
@@ -46,8 +51,7 @@ if 1:
     
     square[int(y - new_o_h) - offset:int(y)- offset, int(x-new_o_w)- offset:int(x)- offset] = new_overlay
     
-    #cv2.imshow("Show by CV2",square)
-    #cv2.waitKey(0)
+
 if 0:
     cv2.imwrite("resizeimg.jpg",newimg)
 
