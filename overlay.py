@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 bg = r'in\Gergiev_art_helps_putin_to_kill.JPG'
 ov = r'in\gergiev_is_war_supporter.JPG'
-out = r'in\gergiev_is_war_supporter.JPG'
+out = r'out\Gergiev_art_helps_putin_to_kill_gergiev_is_war_supporter.JPG'
 
 assert os.path.isfile(bg)
 assert os.path.isfile(ov)
@@ -23,7 +23,7 @@ if 1:
     new_background = cv2.resize(background,(new_b_w, new_b_h))
     #cv2.imshow("Show by CV2",new_background)
     #cv2.waitKey(0)
-    cv2.imwrite("resizeimg_new_background.jpg",new_background)
+    #cv2.imwrite("resizeimg_new_background.jpg",new_background)
      
 
 if 1:
@@ -35,7 +35,7 @@ if 1:
     new_overlay = cv2.resize(overlay,(new_o_w, new_o_h))
     #cv2.imshow("Show by CV2",new_overlay)
     #cv2.waitKey(0)
-    cv2.imwrite("resizeimg_new_overlay.jpg",new_overlay)
+    #cv2.imwrite("resizeimg_new_overlay.jpg",new_overlay)
     
     
 if 1:
@@ -61,7 +61,7 @@ if 1: #OVERLAY
     added_image = cv2.addWeighted(new_background,0.6,square,0.4,0)
     cv2.imshow('adjusted', added_image)  
     cv2.waitKey()
-    #cv2.imwrite('combined.png', added_image)
+    cv2.imwrite(out, added_image)
 if 1: #CONTRAST
 
     alpha = 1.3 # Contrast control (1.0-3.0)
@@ -71,6 +71,7 @@ if 1: #CONTRAST
 
     
     cv2.imshow('adjusted', adjusted)
+    
     cv2.waitKey()
 
 
