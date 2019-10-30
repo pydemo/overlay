@@ -1,5 +1,4 @@
-# overlay
-2 files overlay
+# Overlay of 2 images of different sizes.
 
 ```Python
 bg = r'in\Gergiev_art_helps_putin_to_kill.JPG'
